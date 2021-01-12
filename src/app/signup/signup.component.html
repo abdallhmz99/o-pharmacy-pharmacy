@@ -1,0 +1,41 @@
+
+<div class="w-50 m-auto mt-5  signupsc">
+    <h2 class="text-center pt-3">Sign Up </h2>
+  <form [formGroup]='signupForm' class="w-100 container m-auto py-5" (ngSubmit)='signUp()'>
+      <div class="form-group">
+        <label class='label-color'for="">Name</label>
+        <input formControlName='name' type="text" class="form-control">
+      <div *ngIf="signupForm.controls.name.invalid&&signupForm.controls.name.touched " class="alert alert-danger mt-2">  name not vaild</div>
+      </div>
+        <div class="form-group">
+          <label class='label-color'for=""> phones</label>
+          <input formControlName='phones' type="text" class="form-control">
+          <div *ngIf="signupForm.controls.phones.invalid&&signupForm.controls.phones.touched "  class="alert alert-danger mt-2"> phones not vaild</div>
+        </div>
+        <div class="form-group">
+          <label class='label-color'for="">Email</label>
+          <input formControlName='email' type="email" class="form-control">
+          <div *ngIf="signupForm.controls.email.invalid&&signupForm.controls.email.touched "  class="alert alert-danger mt-2"> Email not vaild</div>
+        </div>
+        <div class="form-group">
+          <label class='label-color'for="">Password</label>
+          <input formControlName='password' type="password" class="form-control">
+          <div *ngIf="signupForm.controls.password.invalid&&signupForm.controls.password.touched "  class="alert alert-danger mt-2"> Password not vaild at least one uppercase letter and number and six letters</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color'for="">Confirm Password</label>
+            <input formControlName='confirmPassword' type="password" class="form-control">
+            <div *ngIf="signupForm.controls.confirmPassword.invalid&&signupForm.controls.confirmPassword.touched "  class="alert alert-danger mt-2"> Password not vaild at least one uppercase letter and number and six letters</div>
+          </div>
+          <div class="form-group">
+            <label class='label-color'for="">location As Address</label>
+            <input formControlName='locationAsAddress' type="text" class="form-control" >
+            <div *ngIf="signupForm.controls.locationAsAddress.invalid&&signupForm.controls.locationAsAddress.touched "  class="alert alert-danger mt-2"> Password not vaild at least one uppercase letter and number and six letters</div>
+          </div>   
+
+        <p class="text-center">By clicking the Submit button , you agree to our <span>Terms & Conditions</span> and <span>Privacy Policy</span></p>
+        <a routerLink='/login'>Already have account , Sign In</a>
+        <button [disabled]='signupForm.invalid' class="btn btn-primary float-right " type="submit">Submit</button>
+        
+  </form>
+  </div>
