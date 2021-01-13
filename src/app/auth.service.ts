@@ -21,4 +21,8 @@ export class AuthService {
    {
     return this._http.post("http://localhost:3000/forgotPasswordPharmacy",registerData);
    }
+   forgotPassword(registerData:any,token:any):Observable<any>
+   {
+    return this._http.post("http://localhost:3000/pharmacyForgotPassword/"+token,registerData);
+   }
 }
