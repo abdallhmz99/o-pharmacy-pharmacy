@@ -6,13 +6,15 @@ import { ResponseResetComponent } from './response-reset/response-reset.componen
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { MapsComponent } from './maps/maps.component'
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'requestreset', component: RequestResetComponent },
   //take token from ts file and send it backend
   { path: 'pharmacyForgotPassword/:token', component: ResponseResetComponent },
-  { path: 'pharmacyVerifyEmail/:token', component: VerifyEmailComponent }
+  { path: 'pharmacyVerifyEmail/:token', component: VerifyEmailComponent },
+  { path: 'maps', component: MapsComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

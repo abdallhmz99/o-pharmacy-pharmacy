@@ -9,8 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RequestResetComponent } from './request-reset/request-reset.component';
 import { ResponseResetComponent } from './response-reset/response-reset.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
-
-
+import { MapsComponent } from './maps/maps.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +17,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     SigninComponent,
     RequestResetComponent,
     ResponseResetComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    MapsComponent,
   ],
   imports: [
     BrowserModule,
