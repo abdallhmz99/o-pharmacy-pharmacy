@@ -25,4 +25,9 @@ export class AuthService {
    {
     return this._http.post("http://localhost:3000/pharmacyForgotPassword/"+token,registerData);
    }
+   verifyEmail(token:any):Observable<any>
+   {
+    return this._http.get("http://localhost:3000/pharmacyVerifyEmail/"+token);
+   }
+
 }
