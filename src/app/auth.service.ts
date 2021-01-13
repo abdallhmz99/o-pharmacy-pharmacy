@@ -17,4 +17,8 @@ export class AuthService {
    {
     return this._http.post("http://localhost:3000/pharmacySignin",loginData);
    }
+   resetPassword(registerData:any):Observable<any>
+   {
+    return this._http.post("http://localhost:3000/forgotPasswordPharmacy",registerData);
+   }
 }
