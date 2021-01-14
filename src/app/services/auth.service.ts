@@ -23,4 +23,9 @@ export class AuthService {
   verifyEmail(token: any): Observable<any> {
     return this._http.get(this.baseUrl + "pharmacyVerifyEmail/" + token);
   }
+
+  isLoggedIn() {
+    return !!localStorage.getItem('token')
+
+  }
 }
