@@ -26,17 +26,7 @@
             <label class='label-color'for="">Confirm Password</label>
             <input formControlName='confirmPassword' type="password" class="form-control">
             <div *ngIf="signupForm.controls.confirmPassword.invalid&&signupForm.controls.confirmPassword.touched "  class="alert alert-danger mt-2"> Password not vaild at least one uppercase letter and number and six letters</div>
-          </div>
-          <div class="form-group">
-            <label class='label-color'for="">flat</label>
-            <input formControlName='flat' type="text" class="form-control" >
-            <div *ngIf="signupForm.controls.flat.invalid&&signupForm.controls.flat.touched "  class="alert alert-danger mt-2"> flat</div>
-          </div>   
-          <div class="form-group">
-            <label class='label-color'for="">floor</label>
-            <input formControlName='floor' type="text" class="form-control" >
-            <div *ngIf="signupForm.controls.floor.invalid&&signupForm.controls.floor.touched "  class="alert alert-danger mt-2"> floor</div>
-          </div>   
+          </div> 
           <div class="form-group">
             <label class='label-color'for="">building</label>
             <input formControlName='building' type="text" class="form-control" >

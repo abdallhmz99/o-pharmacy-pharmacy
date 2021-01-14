@@ -18,8 +18,6 @@ export class SignupComponent implements OnInit {
     'password': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
     'confirmPassword': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
     'locationAsAddress': new FormControl(null, [Validators.required]),
-    'flat': new FormControl(null, [Validators.required]),
-    'floor': new FormControl(null, [Validators.required]),
     'building': new FormControl(null, [Validators.required]),
   });
   //signup button 
@@ -32,7 +30,7 @@ export class SignupComponent implements OnInit {
       password: this.signupForm.value.password,
       confirmPassword: this.signupForm.value.confirmPassword,
       //concat address 
-      locationAsAddress: this.signupForm.value.locationAsAddress + ' building:' + this.signupForm.value.building + ' floor:' + this.signupForm.value.floor + ' flat:' + this.signupForm.value.flat,
+      locationAsAddress: this.signupForm.value.locationAsAddress + ' building:' + this.signupForm.value.building ,
       locationAsCoordinates: {
         coordinates: {
           lat: this.latt, lon: this.lng
