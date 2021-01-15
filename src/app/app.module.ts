@@ -10,6 +10,7 @@ import { RequestResetComponent } from './request-reset/request-reset.component';
 import { ResponseResetComponent } from './response-reset/response-reset.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { MapsComponent } from './maps/maps.component';
+import { ReportProblemComponent } from './report-problem/report-problem.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { MapsComponent } from './maps/maps.component';
     ResponseResetComponent,
     VerifyEmailComponent,
     MapsComponent,
+    ReportProblemComponent,
   ],
   imports: [
     BrowserModule,
