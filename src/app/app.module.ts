@@ -11,6 +11,8 @@ import { ResponseResetComponent } from './response-reset/response-reset.componen
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { MapsComponent } from './maps/maps.component';
 import { ReportProblemComponent } from './report-problem/report-problem.component';
+import { HealthNewsComponent } from './health-news/health-news.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { ReportProblemComponent } from './report-problem/report-problem.componen
     VerifyEmailComponent,
     MapsComponent,
     ReportProblemComponent,
+    HealthNewsComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
