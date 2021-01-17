@@ -14,6 +14,7 @@ export class AuthLoginGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
+//check if logged in can not login again or redirect to login page
 
 
     if (!this._AuthService.isLoggedIn()) {

@@ -11,8 +11,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-
+//if logged in can redirect to any page 
     if (this._AuthService.isLoggedIn()) {
       return true;
     } else {
@@ -20,9 +19,6 @@ export class AuthGuard implements CanActivate {
       return false;
     }
 
-    if (!this._AuthService.isLoggedIn()) {
-      return true;
-    }
 
   }
 
