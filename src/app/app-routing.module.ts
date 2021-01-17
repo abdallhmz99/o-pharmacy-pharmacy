@@ -12,6 +12,7 @@ import { AuthLoginGuard } from './Guards/auth-login.guard';
 import { ReportProblemComponent } from './report-problem/report-problem.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HealthNewsComponent } from './health-news/health-news.component';
+import {VerifyGuard} from './Guards/verify.guard';
 const routes: Routes = [
   {path:"",redirectTo:"signin",pathMatch:"full"},
   { path: 'signin', component: SigninComponent },
@@ -27,7 +28,7 @@ const routes: Routes = [
   { path: 'pharmacyForgotPassword/:token', component: ResponseResetComponent },
   { path: 'pharmacyVerifyEmail/:token', component: VerifyEmailComponent },
   { path: 'maps', component: MapsComponent },
-  // { path: 'maps',canActivate:[AuthGuard] ,component: MapsComponent },
+  // { path: 'maps',canActivate:[AuthGuard,VerifyGuard] ,component: MapsComponent },
   {path:"**",component:NotFoundComponent}
 ];
 @NgModule({
