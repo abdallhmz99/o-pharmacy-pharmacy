@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class ReportService {
   constructor(private _http: HttpClient) {
   }
   reportProblem(problemData: any): Observable<any> {
-    return this._http.post(this.baseUrl + "reportProblem", problemData);
+    return this._http.post(this.baseUrl + "reportProblem", problemData,{ headers: new HttpHeaders({'token': 'Bearer' + localStorage.getItem('token')})
+  });
   }
-
 }
