@@ -13,6 +13,7 @@ import { MapsComponent } from './maps/maps.component';
 import { ReportProblemComponent } from './report-problem/report-problem.component';
 import { HealthNewsComponent } from './health-news/health-news.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NotVerifiedComponent } from './not-verified/not-verified.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReportProblemComponent,
     HealthNewsComponent,
     NotFoundComponent,
+    NotVerifiedComponent,
   ],
   imports: [
     BrowserModule,
