@@ -21,7 +21,6 @@ export class ReportProblemComponent implements OnInit {
   report() {
     //make data json and send it to back end
     let data = {
-      token: this.token,
       name: this.decoded.name,
       phone: this.decoded.phones[0],
       role: 'pharmacy',
