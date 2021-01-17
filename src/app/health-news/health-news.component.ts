@@ -13,7 +13,7 @@ export class HealthNewsComponent implements OnInit {
   { 
     _GetHealthNewsService.getnews().subscribe(
       (data)=>{
-               this.news=data;    
+               this.news=data.articles;    
        },
       (error)=>{
                console.log(error) ;
