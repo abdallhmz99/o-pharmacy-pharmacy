@@ -22,7 +22,8 @@ const routes: Routes = [
   //{ path: 'signup', canActivate:[AuthLoginGuard],component: SignupComponent },
   { path: 'requestreset', component: RequestResetComponent },
   {path:'reportProblem',component:ReportProblemComponent},
-  {path:'healthNews',component:HealthNewsComponent},
+  //{path:'healthNews',component:HealthNewsComponent},
+  {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
 
   //take token from ts file and send it backend
   { path: 'pharmacyForgotPassword/:token', component: ResponseResetComponent },

@@ -16,15 +16,15 @@ export class VerifyGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-            //check if email verified or not from token 
+    //check if email verified or not from token 
 
-      if (this.decoded.isVerified==true) {
-        return true;
-      } else {
-        this._Router.navigate(["/ss"]);
-        return false;
-      }
- 
+    if (this.decoded.isVerified == true && this.decoded.verified == true) {
+      return true;
+    } else {
+      this._Router.navigate(["/ss"]);
+      return false;
+    }
+
   }
-  
+
 }
