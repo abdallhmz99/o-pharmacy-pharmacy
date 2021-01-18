@@ -13,6 +13,7 @@ import { ReportProblemComponent } from './report-problem/report-problem.componen
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HealthNewsComponent } from './health-news/health-news.component';
 import {VerifyGuard} from './Guards/verify.guard';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 const routes: Routes = [
   {path:"",redirectTo:"signin",pathMatch:"full"},
   { path: 'signin', component: SigninComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   //{path:'healthNews',component:HealthNewsComponent},
   {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
   {path:'verifyAccount',canActivate:[AuthGuard],component:VerifyEmailComponent},
-
+  {path:'editProfile',component:EditProfileComponent},
+ 
   //take token from ts file and send it backend
   { path: 'pharmacyForgotPassword/:token', component: ResponseResetComponent },
   { path: 'pharmacyVerifyEmail/:token', component: VerifyEmailComponent },

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{HttpClient}from'@angular/common/http'
+import{HttpClient, HttpHeaders}from'@angular/common/http'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class GetHealthNewsService {
 
   constructor(public _HttpClient:HttpClient) { }
+
+
 
   getnews():Observable<any>
   {
