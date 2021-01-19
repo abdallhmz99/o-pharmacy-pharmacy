@@ -46,4 +46,8 @@ export class EditProfileService {
     return this._HttpClient.post(this.baseUrl + "editPharmacyAddress",{address},this.httpOptions);
   }
 
+  editCoordinates(lat :any,lon:any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "editPharmacyCoordinates",{ lat , lon},this.httpOptions);
+  }
 }
