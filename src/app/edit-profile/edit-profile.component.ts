@@ -101,7 +101,28 @@ export class EditProfileComponent implements OnInit {
 
   
   }
+
   
+  editAddressForm = new FormGroup({
+    'locationAsAddress': new FormControl(null, [Validators.required]),
+    'building': new FormControl(null, [Validators.required])
+ });
+ 
+    editAddress()
+  {
+    let address = this.editAddressForm.value.locationAsAddress + ' building:' + this.editAddressForm.value.building
+    
+    this._EditProfileService.editAddress(address).subscribe(d => {
+      console.log(d)
+    },
+      err => {
+        console.log(err);
+      })
+
+  
+  }
+
+
   constructor(private _EditProfileService :EditProfileService) { }
 
   ngOnInit(): void {
