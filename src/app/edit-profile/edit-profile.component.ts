@@ -58,6 +58,49 @@ export class EditProfileComponent implements OnInit {
   
   }
 
+
+  addPhonesForm = new FormGroup({
+    'phones': new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(12)])
+      });
+ 
+    addPhones()
+  {
+    let phones =[];
+    phones.push(this.addPhonesForm.value.phones); 
+    console.log(this.addPhonesForm.value.phones);
+    console.log(phones);
+    
+    this._EditProfileService.addPhones(phones).subscribe(d => {
+      console.log(d)
+    },
+      err => {
+        console.log(err);
+      })
+
+  
+  }
+
+
+  editPhonesForm = new FormGroup({
+    'phones': new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(12)])
+      });
+ 
+    editPhones()
+  {
+    let phones =[];
+    phones.push(this.editPhonesForm.value.phones); 
+    console.log(this.editPhonesForm.value.phones);
+    console.log(phones);
+    
+    this._EditProfileService.editPhones(phones).subscribe(d => {
+      console.log(d)
+    },
+      err => {
+        console.log(err);
+      })
+
+  
+  }
   
   constructor(private _EditProfileService :EditProfileService) { }
 

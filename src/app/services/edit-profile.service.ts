@@ -28,8 +28,17 @@ export class EditProfileService {
 
   editPassword(oldpassword :any, password:any ,confirmPassword:any):Observable<any>
   {
-    return this._HttpClient.post(this.baseUrl + "editPharmacyPass ",{oldpassword, password ,confirmPassword},this.httpOptions);
+    return this._HttpClient.post(this.baseUrl + "editPharmacyPass",{oldpassword, password ,confirmPassword},this.httpOptions);
   }
 
+  addPhones(phones :any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "addPharmacyPhones",{phones},this.httpOptions);
+  }
+
+  editPhones(phones :any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "editPharmacyPhones",{phones},this.httpOptions);
+  }
 
 }
