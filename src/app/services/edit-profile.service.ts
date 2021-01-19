@@ -25,4 +25,11 @@ export class EditProfileService {
     return this._HttpClient.post(this.baseUrl + "editPharmacyName",{name},this.httpOptions);
   }
 
+
+  editPassword(oldpassword :any, password:any ,confirmPassword:any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "editPharmacyPass ",{oldpassword, password ,confirmPassword},this.httpOptions);
+  }
+
+
 }
