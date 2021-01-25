@@ -17,6 +17,7 @@ import { NotVerifiedComponent } from './not-verified/not-verified.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GetOrdersComponent } from './get-orders/get-orders.component';
 import { PharmacyCurrentOrdersComponent } from './pharmacy-current-orders/pharmacy-current-orders.component';
+import { PharmacyOrderHistoryComponent } from './pharmacy-order-history/pharmacy-order-history.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { PharmacyCurrentOrdersComponent } from './pharmacy-current-orders/pharma
     EditProfileComponent,
     GetOrdersComponent,
     PharmacyCurrentOrdersComponent,
+    PharmacyOrderHistoryComponent,
   ],
   imports: [
     BrowserModule,
