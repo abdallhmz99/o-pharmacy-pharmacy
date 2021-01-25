@@ -14,8 +14,8 @@ export class GetOrdersComponent implements OnInit {
   {
     _OrderOperationsService.getOrders().subscribe(
       (data)=>{
-               this.orders=data;
-               console.log(data);    
+               this.orders=data.order;
+               console.log(this.orders);    
        },
       (error)=>{
                console.log(error) ;

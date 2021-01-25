@@ -1,17 +1,15 @@
 
-<div *ngIf="orders.length>0" class="d-flex justify-content-around row py-4 w-100" >
 
-  <div  *ngFor="let order of orders" class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary" >
+  <div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary" >
   
-    <div>{{order}}</div>
-    <!-- <form class="w-25 m-auto pb-3" (ngSubmit)='agree()'>
+    <div>{{orders._id}}</div>
+    <form class="w-25 m-auto pb-3" (ngSubmit)='agree(orders._id)'>
           <button class="btn btn-primary ml-5 m-auto " type="submit">AGREE</button> 
     </form>
 
-    <form class="w-25  m-auto pb-3" (ngSubmit)='notAgree()'>
+    <form class="w-25  m-auto pb-3" (ngSubmit)='notAgree(orders._id)'>
         <button class="btn btn-primary ml-5 m-auto " type="submit">DECLINE</button> 
-    </form>  -->
+    </form> 
   
 </div>
   
-</div>
