@@ -23,4 +23,9 @@ allOrders():Observable<any>
   {
     return this._HttpClient.get(this.baseUrl+"pharmacyOrderHistory",this.httpOptions)
 }
+
+onePharmacy(orderId:any):Observable<any>
+  {
+    return this._HttpClient.get(this.baseUrl+"pharmacyID/"+orderId,this.httpOptions)
+}
 }

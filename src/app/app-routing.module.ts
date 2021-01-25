@@ -17,6 +17,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GetOrdersComponent } from './get-orders/get-orders.component';
 import { PharmacyCurrentOrdersComponent } from './pharmacy-current-orders/pharmacy-current-orders.component';
 import { PharmacyOrderHistoryComponent } from './pharmacy-order-history/pharmacy-order-history.component';
+import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
 const routes: Routes = [
   {path:"",redirectTo:"signin",pathMatch:"full"},
   { path: 'signin', component: SigninComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:'getOrders',component:GetOrdersComponent},
   {path: 'PharmacyCurrentOrders',component:PharmacyCurrentOrdersComponent},
   {path:'pharmacyOrderHistory',component:PharmacyOrderHistoryComponent},
+  {path:' GetOnePharmacy/:pharmacyID',component:GetOnePharmacyComponent},
 
  
   //take token from ts file and send it backend
