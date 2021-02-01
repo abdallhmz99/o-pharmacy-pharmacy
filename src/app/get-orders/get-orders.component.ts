@@ -12,14 +12,19 @@ export class GetOrdersComponent implements OnInit {
 
   constructor(private _OrderOperationsService:OrderOperationsService) 
   {
-    _OrderOperationsService.getOrders().subscribe(
-      (data)=>{
-               this.orders=data.order;
-               console.log(this.orders);    
-       },
-      (error)=>{
-               console.log(error) ;
-           })
+
+    setInterval(() => {
+      console.log('test')
+      _OrderOperationsService.getOrders().subscribe(
+        (data)=>{
+                 this.orders=data.order;
+                 console.log(this.orders);    
+         },
+        (error)=>{
+                 console.log(error) ;
+             })
+    }, 3000);
+  
    
   }
 
