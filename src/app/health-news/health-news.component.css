@@ -1,0 +1,16 @@
+.mainDiv {
+  background-color: #E1E5E9;
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+}
+
+a {
+  color: #acacac;
+}
+
+a:hover {
+  color: #09c;
+}
+/*# sourceMappingURL=health-news.component.css.map */

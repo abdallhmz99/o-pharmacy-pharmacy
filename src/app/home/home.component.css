@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: circular-book;
+  src: url("assets/fonts/CircularStd-Medium.ttf");
+}
+
+@font-face {
+  font-family: circular-bold;
+  src: url("assets/fonts/CircularStd-Bold.ttf");
+}
+
+body {
+  font-family: "circular-bold";
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input:focus {
+  border: 3px solid #00bfff;
+}
+
+.OpharmacyWord {
+  color: #0099CC;
+}
+
+.headerHome, .headerDesc {
+  color: #707070;
+}
+
+.aboutSpan {
+  font-size: 5rem;
+  position: relative;
+  color: #93e4ff;
+  font-weight: 900;
+}
+
+.spanTest {
+  font-size: 3rem;
+  position: absolute;
+  bottom: 0;
+  left: 32px;
+  z-index: 6;
+  color: #000;
+  font-weight: 500;
+}
+
+li {
+  list-style-image: url("../../assets/images/home/pill.svg");
+}
+
+li::marker {
+  font-size: 3rem;
+  /* You can use px, but I think rem is more respecful */
+  color: #0099CC;
+}
+
+.test {
+  text-decoration: underline;
+}
+
+.firstService {
+  font-family: "circular-bold";
+}
+
+.productSpan {
+  color: #93e4ff;
+}
+
+.about-div {
+  background-color: #eeeeee;
+}
+/*# sourceMappingURL=home.component.css.map */

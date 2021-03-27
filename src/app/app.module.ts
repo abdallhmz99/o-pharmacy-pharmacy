@@ -19,6 +19,9 @@ import { GetOrdersComponent } from './get-orders/get-orders.component';
 import { PharmacyCurrentOrdersComponent } from './pharmacy-current-orders/pharmacy-current-orders.component';
 import { PharmacyOrderHistoryComponent } from './pharmacy-order-history/pharmacy-order-history.component';
 import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,9 @@ import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.com
     PharmacyCurrentOrdersComponent,
     PharmacyOrderHistoryComponent,
     GetOnePharmacyComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

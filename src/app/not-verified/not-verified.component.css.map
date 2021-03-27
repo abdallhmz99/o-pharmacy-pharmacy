@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,gBAAgB,EAAE,IAAI;CACzB",
+    "sources": [
+        "not-verified.component.scss"
+    ],
+    "names": [],
+    "file": "not-verified.component.css"
+}

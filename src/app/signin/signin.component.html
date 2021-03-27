@@ -1,20 +1,39 @@
 
-<div class="w-50 m-auto mt-5  loginsc align-self-center">
-    <h1 class="text-center pt-3 ">Sign  In </h1>
-  <form [formGroup]='signinForm' class="w-100 container m-auto py-5" (ngSubmit)='signIn()'>
-        <div class="form-group">
-          <label class='label-color'for="">Email</label>
-          <input formControlName='email' type="email" class="form-control">
-          <div *ngIf="signinForm.controls.email.invalid&&signinForm.controls.email.touched "  class="alert alert-danger mt-2"> Email not vaild</div>
-        </div>
-        <div class="form-group">
-          <label class='label-color'for="">Password</label>
-          <input formControlName='password' type="password" class="form-control">
-          <div *ngIf="signinForm.controls.password.invalid&&signinForm.controls.password.touched "  class="alert alert-danger mt-2"> Password not vaild</div>
-        </div>
-        <a routerLink='/signup'>Don't have account? , Register</a>
-        <button [disabled]='signinForm.invalid' class="btn btn-primary float-right " type="submit">Sign In</button>
-        
-  </form>
-  </div>
+<div class="mainDiv my-5">
+  <div class="container m-auto border border-secondary shadow-lg  bg-white rounded">
+
+    <h1 class="text-center pt-5">Sign in </h1>
+    <div class="row">
+      <div class="col-md-6">
+  <img src="../../assets/images/login/Login.gif" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-6 py-2">
+        <form [formGroup]='signinForm' class="w-100 container m-auto py-5 " (ngSubmit)='signIn()'>
+          <div class="form-inline">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" formControlName='email' placeholder="example@example.com">
+          </div>
+          <label for="password">Password</label>
+          <input type="password" id="password" formControlName='password' name="password" placeholder="************">
+          <div *ngIf="isInvalidData" class="alert alert-danger border rounded-0" role="alert">
+            {{responseMessage}}
+          </div>
+          <div class="d-flex justify-content-between">
+            <a routerLink='/signup'>Don't have account? , Register</a>
+            <a routerLink='/requestreset'>
+              <p>Forgot Password ?</p>
+            </a>
   
+  
+          </div>
+  
+          <button type="submit" [disabled]='signinForm.invalid' class="float-right"><span *ngIf="!isClicked">Sign
+              In</span><span *ngIf="isClicked">Waiting....</span></button>
+  
+  
+  
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,6 +21,7 @@ export class VerifyEmailComponent implements OnInit {
         console.log(err);
       });
   }
+
   ngOnInit(): void {
   }
 }

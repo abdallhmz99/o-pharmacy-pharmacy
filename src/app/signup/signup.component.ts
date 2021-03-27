@@ -9,7 +9,10 @@ import * as mapboxgl from 'mapbox-gl';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
+  isClicked:any=false;
+isMatched:any;
+isEnteredCoordinates:any;
+returnMessage:any;
   //get data from form 
   signupForm = new FormGroup({
     'name': new FormControl(null, [Validators.required, Validators.pattern(/[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,20}$/)]),
@@ -22,6 +25,8 @@ export class SignupComponent implements OnInit {
   });
   //signup button 
   signUp() {
+    this.isClicked=true;
+
     //data is the json that will send to backend
     let data = {
       name: this.signupForm.value.name,

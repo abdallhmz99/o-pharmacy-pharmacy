@@ -1,4 +1,137 @@
 
+
+
+
+
+
+
+
+<div class="mainDiv my-5">
+  <div class="container  border border-secondary shadow-lg  bg-white rounded">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center pt-3">Sign Up </h2>
+        <form [formGroup]='signupForm' class="w-100 container m-auto py-5" (ngSubmit)='signUp()'>
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../../assets/images/signup/Account.gif" class="img-fluid" alt="">
+            </div>
+
+
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName='name' type="text" class="form-control w-100" placeholder="Name">
+                    <div *ngIf="signupForm.controls.name.invalid&&signupForm.controls.name.touched "
+                      class="alert alert-danger mt-2 w-100">
+                      name not vaild</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName='phones' type="number" class="form-control w-100" placeholder="Phone">
+                    <div *ngIf="signupForm.controls.phones.invalid&&signupForm.controls.phones.touched "
+                      class="alert alert-danger mt-2 w-100"> phone not vaild</div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="form-group">
+                <input formControlName='email' type="email" class="form-control" placeholder="Email">
+                <div *ngIf="signupForm.controls.email.invalid&&signupForm.controls.email.touched "
+                  class="alert alert-danger mt-2"> Email not vaild</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName='password' type="password" class="form-control" placeholder="Password">
+                    <div *ngIf="signupForm.controls.password.invalid&&signupForm.controls.password.touched "
+                      class="alert alert-danger mt-2"> Password not vaild at least one uppercase letter and number and
+                      six
+                      letters</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName='confirmPassword' type="password" class="form-control"
+                      placeholder="Confirm Password">
+                    <div
+                      *ngIf="signupForm.controls.confirmPassword.invalid&&signupForm.controls.confirmPassword.touched "
+                      class="alert alert-danger mt-2"> Password not vaild at least one uppercase letter and number and
+                      six
+                      letters</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+               
+             
+                <div class="col-md-12">
+
+                  <div class="form-group">
+                    <input formControlName='building' type="text" class="form-control" placeholder="Building">
+                    <div *ngIf="signupForm.controls.building.invalid&&signupForm.controls.building.touched "
+                      class="alert alert-danger mt-2"> building</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <input formControlName='locationAsAddress' type="text" class="form-control"
+                  placeholder="Location As Address">
+                <div
+                  *ngIf="signupForm.controls.locationAsAddress.invalid&&signupForm.controls.locationAsAddress.touched "
+                  class="alert alert-danger mt-2"> locationAsAddress</div>
+              </div>
+              <div *ngIf='isMatched' class="alert alert-danger mt-2">
+                Confirmation Password not matched
+              </div>
+
+
+            </div>
+            <div class="col-md-12 h-100">
+
+              <div id="map" class="w-100 "></div>
+              <div *ngIf='isEnteredCoordinates' class="alert alert-info my-2" role="alert">
+                {{isEnteredCoordinates}}
+              </div>
+              <div *ngIf='returnMessage' class="alert alert-info my-2" role="alert">
+                {{returnMessage}}
+              </div>
+            </div>
+
+          </div>
+          <div class="my-3">
+            <a routerLink='/signin' class="py-3">Already have account , Sign In</a>
+            <!-- <button [disabled]='signupForm.invalid' class="btn btn-primary float-right " type="submit">Submit</button> -->
+
+            <button type="submit" [disabled]='signupForm.invalid' class="float-right"><span *ngIf="!isClicked">Sign
+                Up</span><span *ngIf="isClicked">Waiting....</span></button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <div class="w-50 m-auto mt-5  signupsc">
     <h2 class="text-center pt-3">Sign Up </h2>
   <form [formGroup]='signupForm' class="w-100 container m-auto py-5" (ngSubmit)='signUp()'>
@@ -46,4 +179,4 @@
 
 
 
-  </div>
+  </div> -->

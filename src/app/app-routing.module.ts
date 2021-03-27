@@ -18,8 +18,11 @@ import { GetOrdersComponent } from './get-orders/get-orders.component';
 import { PharmacyCurrentOrdersComponent } from './pharmacy-current-orders/pharmacy-current-orders.component';
 import { PharmacyOrderHistoryComponent } from './pharmacy-order-history/pharmacy-order-history.component';
 import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
+import { HomeComponent } from './home/home.component';
 const routes: Routes = [
-  {path:"",redirectTo:"signin",pathMatch:"full"},
+  {path:"",redirectTo:"home",pathMatch:"full"},
+  {path:'home',component:HomeComponent},
+
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   //check if logged in can't redirect to sign or signup again
@@ -27,9 +30,8 @@ const routes: Routes = [
   //{ path: 'signup', canActivate:[AuthLoginGuard],component: SignupComponent },
   { path: 'requestreset', component: RequestResetComponent },
   {path:'reportProblem',component:ReportProblemComponent},
-  //{path:'healthNews',component:HealthNewsComponent},
-  {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
-  {path:'verifyAccount',canActivate:[AuthGuard],component:VerifyEmailComponent},
+  {path:'healthNews',component:HealthNewsComponent},
+  {path:'verifyAccount',component:VerifyEmailComponent},
   {path:'editProfile',component:EditProfileComponent},
   {path:'getOrders',component:GetOrdersComponent},
   {path: 'PharmacyCurrentOrders',component:PharmacyCurrentOrdersComponent},

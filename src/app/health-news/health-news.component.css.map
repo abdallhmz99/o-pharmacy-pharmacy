@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,gBAAgB,EAAE,OAAO;CAC3B;;AAED,AAAA,CAAC,AAAA,KAAK,EAAC,CAAC,AAAA,QAAQ,EAAC,CAAC,AAAA,OAAO,CAAC;EACtB,eAAe,EAAE,IAAI;CACtB;;AACD,AAAA,CAAC,CAAA;EACG,KAAK,EAAE,OAAkB;CAC5B;;AACD,AAAA,CAAC,AAAA,MAAM,CAAA;EACL,KAAK,EAAC,IAAI;CACb",
+    "sources": [
+        "health-news.component.scss"
+    ],
+    "names": [],
+    "file": "health-news.component.css"
+}

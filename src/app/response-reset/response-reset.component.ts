@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResponseResetComponent implements OnInit {
   token: any;
+  isClicked:any=false;
+  isSuccess:any;
+  responseMessage:any;
   //take data from form and check validation
   ResetForm = new FormGroup({
     'password': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
@@ -17,8 +20,15 @@ export class ResponseResetComponent implements OnInit {
   });
   //call reset password service api 
   ResetPass() {
+    this.isClicked=true;
+    
     console.log(this.ResetForm.value)
+    //take the token from the url
     this._AuthService.forgotPassword(this.ResetForm.value, this.token).subscribe(data => {
+      this.isClicked=false;
+        this.isSuccess=true;
+        this.responseMessage=data.message;
+      
       console.log(data)
     },
       err => {
@@ -26,9 +36,10 @@ export class ResponseResetComponent implements OnInit {
       });
   }
   constructor(private _AuthService: AuthService, private _Router: Router, private _ActivatedRoute: ActivatedRoute) {
-    //take the token from the url
     this.token = _ActivatedRoute.snapshot.paramMap.get("token");
   }
+    
+ 
   ngOnInit(): void {
   }
 }

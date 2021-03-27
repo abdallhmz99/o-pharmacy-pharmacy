@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "pharmacy-current-orders.component.scss"
+    ],
+    "names": [],
+    "file": "pharmacy-current-orders.component.css"
+}
