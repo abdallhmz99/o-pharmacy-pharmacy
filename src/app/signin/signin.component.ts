@@ -26,8 +26,10 @@ export class SigninComponent implements OnInit {
       if (data.message == 'success') {
         this.isClicked=false;
         localStorage.setItem('token', data.token);
-        localStorage.setItem('photo', data.photo);
-
+        if(data.logo!=null||data.logo!=undefined){
+          localStorage.setItem('logo', data.logo);
+        }
+     
         //console.log('test',data.photo)
          window.location.reload();
       }
@@ -51,7 +53,8 @@ export class SigninComponent implements OnInit {
       });
   }
   constructor(private _AuthService: AuthService, private _Router: Router) { }
- 
+  
+
   ngOnInit(): void {
   }
 }

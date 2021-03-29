@@ -13,7 +13,9 @@ token:any=localStorage.getItem('token');
 name:any;
 email:any;
  decoded:any;
- photo:any;
+ logo:any;
+ isPhoto:any=false;
+
   constructor() {
     this.isLogged();
 
@@ -22,18 +24,28 @@ email:any;
   ngOnInit(): void {
   }
 
-  isLogged(){
-    if(this.token){
-      this.isLoggedIn=true;
-      this.decoded = jwt_decode(this.token);
-      this.name=this.decoded.name;
-      this.email=this.decoded.email;
-      this.photo=localStorage.getItem('photo');
+
+  
+  isLogged(){if(this.token){
+    this.isLoggedIn=true;
+    this.decoded = jwt_decode(this.token);
+    this.name=this.decoded.name;
+    this.email=this.decoded.email;
+
+    if (localStorage.getItem('logo')!=null||localStorage.getItem('logo')!=undefined) {
+      this.isPhoto=true;
+      this.logo=localStorage.getItem('logo');
+
     }
     else{
-      this.isLoggedIn=false;
+      this.isPhoto=false;
     }
   }
+  else{
+    this.isLoggedIn=false;
+  }
+}
+
 
   logout(){
     localStorage.removeItem('token');
