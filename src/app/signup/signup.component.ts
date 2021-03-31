@@ -9,10 +9,10 @@ import * as mapboxgl from 'mapbox-gl';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  isClicked:any=false;
-isMatched:any;
-isEnteredCoordinates:any;
-returnMessage:any;
+  isClicked: any = false;
+  isMatched: any;
+  isEnteredCoordinates: any;
+  returnMessage: any;
   //get data from form 
   signupForm = new FormGroup({
     'name': new FormControl(null, [Validators.required, Validators.pattern(/[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,20}$/)]),
@@ -25,35 +25,61 @@ returnMessage:any;
   });
   //signup button 
   signUp() {
-    this.isClicked=true;
-
-    //data is the json that will send to backend
-    let data = {
-      name: this.signupForm.value.name,
-      phones: this.signupForm.value.phones,
-      email: this.signupForm.value.email,
-      password: this.signupForm.value.password,
-      confirmPassword: this.signupForm.value.confirmPassword,
-      //concat address 
-      locationAsAddress: this.signupForm.value.locationAsAddress + ' building:' + this.signupForm.value.building ,
-      locationAsCoordinates: {
-        coordinates: {
-          lat: this.latt, lon: this.lng
+    this.isClicked = true;
+    this.isClicked = true;
+    if (this.signupForm.value.password != this.signupForm.value.confirmPassword) {
+      this.isMatched = true;
+      this.isClicked = false;
+    }
+    else {
+      console.log('matched')
+      this.isMatched = false;
+      //data is the json that will send to backend
+      let data = {
+        name: this.signupForm.value.name,
+        phones: this.signupForm.value.phones,
+        email: this.signupForm.value.email,
+        password: this.signupForm.value.password,
+        confirmPassword: this.signupForm.value.confirmPassword,
+        //concat address 
+        locationAsAddress: this.signupForm.value.locationAsAddress + ' building:' + this.signupForm.value.building,
+        locationAsCoordinates: {
+          coordinates: {
+            lat: this.latt, lon: this.lng
+          }
         }
       }
-    }
-    console.log(data);
-    //check if user used map to enter location or not the function return true or false 
-    if (this.checklocation(this.latt, this.lng) != false) {
-      //if used map add the user 
-      this._AuthService.register(data).subscribe(d => {
-        console.log(d)
-      },
-        err => {
-          console.log(err);
-        })
-    } else {
-      console.log('enter coordinates')
+      console.log(data);
+      //check if user used map to enter location or not the function return true or false 
+      if (this.checklocation(this.latt, this.lng) != false) {
+        //if used map add the user 
+        this._AuthService.register(data).subscribe(d => {
+          this.isClicked = false;
+          if (d.message == 'Success') {
+            this.isEnteredCoordinates = null;
+            this.returnMessage = d.message;
+            this.signupForm.reset();
+          }
+          console.log(d)
+          if (d.errors) {
+
+            d.message = 'Enter Valid Data';
+            this.returnMessage = d.message;
+
+
+          }
+          this.returnMessage = d.message;
+          console.log(d.message)
+        },
+          err => {
+            console.log(err);
+            this.returnMessage = 'check the entered data';
+            console.log('check the entered data')
+          })
+      } else {
+        this.isClicked = false;
+        this.isEnteredCoordinates = 'Enter Coordinates';
+      }
     }
   }
   //check if user used map to enter location or not the function return true or false 
@@ -70,7 +96,7 @@ returnMessage:any;
       accessToken,
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [30.013056, 31.208853], // starting position
+      center: [31.208853, 30.013056], // starting position
       zoom: 9,// starting zoom
       trackResize: true
     });
