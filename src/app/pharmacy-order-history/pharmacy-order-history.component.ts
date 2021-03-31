@@ -13,10 +13,16 @@ export class PharmacyOrderHistoryComponent implements OnInit {
 constructor(_PharmacyOrderHistoryService:PharmacyOrderHistoryService) { 
 
   _PharmacyOrderHistoryService.allOrders().subscribe(
-
     (data)=>{
-      
-      this.allOrdersData=data;    
+      console.log('tests')
+      if (data.message=='success') {
+        this.allOrdersData=data.pharmacyOrders;
+      }
+      else if (data.message="You Didn't Receive Order Yet") {
+        this.allOrdersData=null;   
+        console.log(this.allOrdersData);
+      }
+        
 },
 (error)=>{
       console.log(error) ;

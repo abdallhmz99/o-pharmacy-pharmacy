@@ -29,24 +29,14 @@ input:focus {
   border: 3px solid #00bfff;
 }
 
-.noOrderText {
-  font-family: "circular-book";
+footer {
+  background-color: #0099CC;
 }
 
-.shadowDiv:hover {
-  -webkit-box-shadow: 10px 10px 5px #1cb3e6;
-          box-shadow: 10px 10px 5px #1cb3e6;
+.downloadApp {
+  font-family: "circular-bold";
+  font-weight: 700 !important;
+  font-size: 1.5rem;
+  color: white;
 }
-
-a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
-}
-
-.numberandDate {
-  color: #707070;
-}
-
-.orderMinH {
-  min-height: 57vh;
-}
-/*# sourceMappingURL=pharmacy-order-history.component.css.map */
+/*# sourceMappingURL=footer.component.css.map */
