@@ -9,7 +9,11 @@ import {OrderOperationsService} from '../services/order-operations.service';
 })
 export class GetOrdersComponent implements OnInit {
   orders:any ;
-
+  orderDate:any;
+orderByText:any;
+orderTime:any;
+orderID:any;
+orderByimg:any;
   constructor(private _OrderOperationsService:OrderOperationsService) 
   {
 
@@ -17,8 +21,16 @@ export class GetOrdersComponent implements OnInit {
       console.log('test')
       _OrderOperationsService.getOrders().subscribe(
         (data)=>{
-                 this.orders=data.order;
-                 console.log(this.orders);    
+          if(data){
+
+            this.orders=data.order;
+            this.orderID=this.orders._id;
+            this.orderDate=this.orders.date.substring(0,10);
+            this.orderTime=this.orders.date.substring(11,19);
+            this.orderByText=this.orders.orderByTexting;
+            this.orderByimg=this.orders.orderByPhoto;
+            console.log(this.orders);   
+          } 
          },
         (error)=>{
                  console.log(error) ;
@@ -28,9 +40,10 @@ export class GetOrdersComponent implements OnInit {
    
   }
 
-  agree(order_id:any)
+  agree()
   {
-    this. _OrderOperationsService.pharmacyAgree(order_id).subscribe(d => {
+    this. _OrderOperationsService.pharmacyAgree(this.orderID).subscribe(d => {
+
       console.log(d)
     },
       err => {
@@ -39,9 +52,9 @@ export class GetOrdersComponent implements OnInit {
 
   } 
   
-  notAgree(order_id:any)
+  notAgree()
   {
-    this. _OrderOperationsService.pharmacyNotAgree(order_id).subscribe(d => {
+    this. _OrderOperationsService.pharmacyNotAgree(this.orderID).subscribe(d => {
       console.log(d)
     },
       err => {

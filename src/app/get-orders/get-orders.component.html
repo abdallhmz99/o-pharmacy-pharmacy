@@ -13,3 +13,56 @@
   
 </div>
    -->
+<div class="mainDiv" *ngIf='!orders'>
+  <div class="col-md-12 text-center">
+    <img src="../../assets/images/order history/item_nos.png" class="img-fluid py-3" alt="">
+      <h1 class="noOrderText">NO CURRENT ORDER</h1>
+</div>
+</div>
+
+
+<div class="mainDiv" *ngIf='orders'>
+     <div class="container">
+     <div class="row">
+       <div class="col-md-3   text-center my-4 px-3 border">
+        <div class="img-container my-3">
+
+          <img src="../../assets/images/21666259.jpg" class="img-fluid rounded-circle " alt="">
+        </div>
+        <div class="userInfo my-3">
+          <h2 class="my-2"> Name :asdasd</h2>
+          <h3 class="my-2"> <p>Phone :<a href="tel:+4733378901"> +47 333 78 901</a></p> </h3>
+          <h4 class="my-2">Address:</h4>
+        </div>
+       </div>
+       <div class="col-md-9  ">
+          <div class="orderContent p-5 border my-4">
+            <h3>Date : {{orderDate}}</h3>
+            <h3>Time : {{orderTime}}</h3>
+            <hr>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card-body border border-black p-1 mb-3"> <p class="p-0">{{orderByText}}</p> </div> 
+
+              </div>
+              <div class="col-md-6">
+                <img class="img-fluid" *ngIf='orderByimg'  src="{{orderByimg}}" alt="">
+                <img class="img-fluid" *ngIf='!orderByimg' src="../../assets/images/file-20190129-108364-17hlc1x.jpg" alt="">
+
+              </div>
+            </div>
+            <div class="btnsContainer my-3">
+              <form action="">
+                                <button class="btn btn-success ml-5 " (click)='agree()' type="submit">AGREE</button> 
+          <button class="btn btn-danger ml-5 " (click)='notAgree()' type="submit">DECLINE</button> 
+              </form>
+      
+            </div>
+      
+      
+          </div>
+     
+       </div>
+     </div>
+   </div>
+</div>
