@@ -27,12 +27,14 @@
        <div class="col-md-3   text-center my-4 px-3 border">
         <div class="img-container my-3">
 
-          <img src="../../assets/images/21666259.jpg" class="img-fluid rounded-circle " alt="">
+          <img *ngIf='!customerPhoto' src="../../assets/images/21666259.jpg" class="img-fluid rounded-circle " alt="">
+          <img *ngIf='customerPhoto' [src]="customerPhoto" class="img-fluid rounded-circle " alt="">
+
         </div>
         <div class="userInfo my-3">
-          <h2 class="my-2"> Name :asdasd</h2>
-          <h3 class="my-2"> <p>Phone :<a href="tel:+4733378901"> +47 333 78 901</a></p> </h3>
-          <h4 class="my-2">Address:</h4>
+          <h2 class="my-2"> Name :{{customerData.name}}</h2>
+          <h3 class="my-2"> <p>Phone :<a href="tel:{{customerData.phone}}">{{customerData.phone}}</a></p> </h3>
+          <h4 class="my-2">Address:{{customerData.locationAsAddress}}</h4>
         </div>
        </div>
        <div class="col-md-9  ">

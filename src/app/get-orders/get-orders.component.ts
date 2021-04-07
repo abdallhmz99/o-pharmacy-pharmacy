@@ -14,14 +14,16 @@ orderByText:any;
 orderTime:any;
 orderID:any;
 orderByimg:any;
+customerData:any;
+customerPhoto:any;
   constructor(private _OrderOperationsService:OrderOperationsService) 
   {
 
     setInterval(() => {
-      console.log('test')
       _OrderOperationsService.getOrders().subscribe(
         (data)=>{
           if(data){
+            console.log(data)
 
             this.orders=data.order;
             this.orderID=this.orders._id;
@@ -29,7 +31,8 @@ orderByimg:any;
             this.orderTime=this.orders.date.substring(11,19);
             this.orderByText=this.orders.orderByTexting;
             this.orderByimg=this.orders.orderByPhoto;
-            console.log(this.orders);   
+            this.customerData=data.customerData;
+            this.customerPhoto=this.customerData.photo;
           } 
          },
         (error)=>{
@@ -43,7 +46,7 @@ orderByimg:any;
   agree()
   {
     this. _OrderOperationsService.pharmacyAgree(this.orderID).subscribe(d => {
-
+      
       console.log(d)
     },
       err => {
@@ -55,7 +58,9 @@ orderByimg:any;
   notAgree()
   {
     this. _OrderOperationsService.pharmacyNotAgree(this.orderID).subscribe(d => {
-      console.log(d)
+      this.orders=null;
+      window.location.reload();
+      console.log('canceled')
     },
       err => {
         console.log(err);
