@@ -12,24 +12,21 @@
           <div class="d-flex row justify-content-between w-100 ">
     
               
-            <div class="col-sm-12 col-md-3 col-lg-3 border-black border rounded my-auto mr-1 py-3 ">
+            <div class="col-sm-12 col-md-3 col-lg-3 border-black border rounded h-auto my-auto mr-1 py-3 ">
               <div>
-                <div class=" justify-content-between  ">
+                <div *ngIf="pharmacyCurrentOrderData!=null" class=" justify-content-between  ">
                   <div class="card-header">ordered by:</div>
                   <img class="img-fluid img w-50 h-50 center rounded-circle" *ngIf="customerphoto!=null" src="{{customerphoto}}" alt="{{customerName}} photo">
                   <img class="img-fluid img w-50 h-50 center rounded-circle" *ngIf="customerphoto==null" src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" alt="{{customerName}} photo">
                   <h3 class="mx-1 text-center numberandDate">{{customerName}}</h3>
                   <div ><h4 class="mx-1 text-center numberandDate">{{customerphone}}</h4></div>
                   <h4 class="mx-1 text-center numberandDate">{{customerAddress}}</h4>
-                   <div id="map" class="bg-dark center" style="width: 16rem; height: 16rem;"></div> 
-                </div> 
-               
-    
+                </div>
               </div>
-            
+              <div id="map" class="center" style="width: 16rem; height: 16rem;"></div> 
             </div>
     
-            <div class=" col-sm-12 col-md-8 col-lg-8 border-black border rounded my-auto py-3">
+            <div *ngIf="pharmacyCurrentOrderData!=null"  class=" col-sm-12 col-md-8 col-lg-8 border-black border rounded my-auto py-3">
                     <div class="card-header">Order Details:</div> 
                     <div class=" d-flex justify-content-between  ">
                       <div class="col-sm-4 col-md-4 col-lg-4"> 
