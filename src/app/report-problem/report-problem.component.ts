@@ -10,6 +10,8 @@ import jwt_decode from "jwt-decode";
   styleUrls: ['./report-problem.component.scss']
 })
 export class ReportProblemComponent implements OnInit {
+  message:any;
+  isClicked: any = false;
   //get token from local storage
   token: any = localStorage.getItem('token');
   //decode token
@@ -19,6 +21,7 @@ export class ReportProblemComponent implements OnInit {
     'problem': new FormControl(null, [Validators.required]),
   });
   report() {
+    this.isClicked=true;
     //make data json and send it to back end
     let data = {
       name: this.decoded.name,
@@ -27,7 +30,14 @@ export class ReportProblemComponent implements OnInit {
       email:this.decoded.email,
       problem: this.reoportForm.value.problem
     }
+    this.reoportForm.reset();
+
     this._ReportService.reportProblem(data).subscribe(d => {
+
+      if(d.message=='email sent'){
+        this.message='email sent';
+        this.isClicked=false;
+      }
       console.log(d)
     },
       err => {
