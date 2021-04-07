@@ -9,12 +9,22 @@ export class PharmacyCurrentOrdersComponent implements OnInit {
 
   
   pharmacyCurrentOrderData: any;
+  customerdata:any;
 
   constructor(private _PharmacyCurrentOrdersService:PharmacyCurrentOrdersService) {
 
 _PharmacyCurrentOrdersService.pharmacyCurrentOrder().subscribe( (data)=>{
-        
-  this.pharmacyCurrentOrderData = data; 
+if(data.message=='success')        
+{  this.pharmacyCurrentOrderData = data.pharmacyOrders[0].orderdata;
+  this.customerdata=data.pharmacyOrders[0].customersData;
+}
+else
+if(data.message=="no order founds")
+{this.pharmacyCurrentOrderData = null;
+  this.customerdata=null;} 
+
+console.log(this.pharmacyCurrentOrderData);
+console.log(this.customerdata);
 
 
 },
