@@ -24,26 +24,26 @@ const routes: Routes = [
   {path:"",redirectTo:"home",pathMatch:"full"},
   {path:'home',component:HomeComponent},
 
-  { path: 'signin', component: SigninComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: 'signin', canActivate:[AuthLoginGuard],component: SigninComponent },
+  { path: 'signup',canActivate:[AuthLoginGuard], component: SignupComponent },
   //check if logged in can't redirect to sign or signup again
   //{ path: 'signin',canActivate:[AuthLoginGuard] , component: SigninComponent },
   //{ path: 'signup', canActivate:[AuthLoginGuard],component: SignupComponent },
-  { path: 'requestreset', component: RequestResetComponent },
+  { path: 'requestreset',canActivate:[AuthLoginGuard], component: RequestResetComponent },
   {path:'reportProblem',component:ReportProblemComponent},
-  {path:'healthNews',component:HealthNewsComponent},
+  {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
   {path:'verifyAccount',component:VerifyEmailComponent},
-  {path:'editProfile',component:EditProfileComponent},
-  {path:'getOrders',component:GetOrdersComponent},
-  {path: 'PharmacyCurrentOrders',component:PharmacyCurrentOrdersComponent},
-  {path:'pharmacyOrderHistory',component:PharmacyOrderHistoryComponent},
-  {path:' GetOnePharmacy/:pharmacyID',component:GetOnePharmacyComponent},
+  {path:'editProfile',canActivate:[AuthGuard,VerifyGuard],component:EditProfileComponent},
+  {path:'getOrders',canActivate:[AuthGuard,VerifyGuard],component:GetOrdersComponent},
+  {path: 'PharmacyCurrentOrders',canActivate:[AuthGuard,VerifyGuard],component:PharmacyCurrentOrdersComponent},
+  {path:'pharmacyOrderHistory',canActivate:[AuthGuard,VerifyGuard],component:PharmacyOrderHistoryComponent},
+  // {path:' GetOnePharmacy/:pharmacyID',component:GetOnePharmacyComponent},
   {path:'getOneOrder/:currentOrder',component:GetOneOrderComponent},
  
   //take token from ts file and send it backend
-  { path: 'pharmacyForgotPassword/:token', component: ResponseResetComponent },
-  { path: 'pharmacyVerifyEmail/:token', component: VerifyEmailComponent },
-  { path: 'maps', component: MapsComponent },
+  { path: 'pharmacyForgotPassword/:token',canActivate:[AuthLoginGuard], component: ResponseResetComponent },
+  { path: 'pharmacyVerifyEmail/:token',canActivate:[AuthLoginGuard], component: VerifyEmailComponent },
+  // { path: 'maps', component: MapsComponent },
   // { path: 'maps',canActivate:[AuthGuard,VerifyGuard] ,component: MapsComponent },
   {path:"**",component:NotFoundComponent}
 ];
