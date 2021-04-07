@@ -22,6 +22,7 @@ import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.com
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     FooterComponent,
     NavbarComponent,
+    GetOneOrderComponent,
   ],
   imports: [
     BrowserModule,
