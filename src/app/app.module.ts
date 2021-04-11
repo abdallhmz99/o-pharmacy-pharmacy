@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
+import { EditPrivilegeComponent } from './edit-privilege/edit-privilege.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
     FooterComponent,
     NavbarComponent,
     GetOneOrderComponent,
+    EditPrivilegeComponent,
   ],
   imports: [
     BrowserModule,

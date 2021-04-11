@@ -23,6 +23,10 @@ export class AuthService {
   verifyEmail(token: any): Observable<any> {
     return this._http.get(this.baseUrl + "pharmacyVerifyEmail/" + token);
   }
+  signinPrivilege(privilegeData:any):Observable<any>{
+    return this._http.post(this.baseUrl + "pharmacyPrivilege", privilegeData);
+
+  }
 
   isLoggedIn() {
     return !!localStorage.getItem('token')

@@ -20,6 +20,7 @@ import { PharmacyOrderHistoryComponent } from './pharmacy-order-history/pharmacy
 import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
 import{GetOneOrderComponent}from'./get-one-order/get-one-order.component'
 import { HomeComponent } from './home/home.component';
+import { EditPrivilegeComponent } from './edit-privilege/edit-privilege.component';
 const routes: Routes = [
   {path:"",redirectTo:"home",pathMatch:"full"},
   {path:'home',component:HomeComponent},
@@ -33,7 +34,9 @@ const routes: Routes = [
   {path:'reportProblem',canActivate:[AuthGuard,VerifyGuard], component:ReportProblemComponent},
   {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
   {path:'verifyAccount',component:VerifyEmailComponent},
+  {path:'editPrivilege',canActivate:[AuthGuard,VerifyGuard],component:EditPrivilegeComponent},
   {path:'editProfile',canActivate:[AuthGuard,VerifyGuard],component:EditProfileComponent},
+
   {path:'getOrders',canActivate:[AuthGuard,VerifyGuard],component:GetOrdersComponent},
   {path: 'PharmacyCurrentOrders',canActivate:[AuthGuard,VerifyGuard],component:PharmacyCurrentOrdersComponent},
   {path:'pharmacyOrderHistory',canActivate:[AuthGuard,VerifyGuard],component:PharmacyOrderHistoryComponent},
