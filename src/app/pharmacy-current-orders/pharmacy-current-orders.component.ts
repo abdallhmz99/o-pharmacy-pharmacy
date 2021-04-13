@@ -69,6 +69,19 @@ export class PharmacyCurrentOrdersComponent implements OnInit {
      }
 
 
+     cancel()
+   {
+     this._PharmacyCurrentOrdersService.cancelOrder(this.pharmacyCurrentOrderData._id).subscribe(d => {
+       console.log(d)
+       console.log('canceled')
+
+       window.location.reload();
+     },
+       err => {
+         console.log(err);
+       })
+ 
+   }
 
    done()
    {

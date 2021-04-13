@@ -29,4 +29,9 @@ doneOrder(orderId:any):Observable<any>
   return this._HttpClient.post(this.baseUrl+"doneorder",{orderId},this.httpOptions)
 }
 
+cancelOrder(orderId:any):Observable<any>
+{
+  return this._HttpClient.post(this.baseUrl+"cancel",{orderId},this.httpOptions)
+}
+
   }
