@@ -26,39 +26,65 @@ export class PharmacyCurrentOrdersComponent implements OnInit {
   orderPhoto:any;
 
   constructor(private _PharmacyCurrentOrdersService:PharmacyCurrentOrdersService) {
-
-_PharmacyCurrentOrdersService.pharmacyCurrentOrder().subscribe( (data)=>{
-if(data.message=='success')        
-{  this.pharmacyCurrentOrderData = data.pharmacyOrders[0].orderdata;
-  this.customerdata=data.pharmacyOrders[0].customersData;
-  this.orderDate=this.pharmacyCurrentOrderData.date.substring(0,10);
-  this.orderTime=this.pharmacyCurrentOrderData.date.substring(11,19);
-  this.customerName=this.customerdata.name;
-  this.customerphoto=this.customerdata.photo;
-  this.customerphone=this.customerdata.phone;
-  this.customerAddress=this.customerdata.locationAsAddress
-  this.lng=this.customerdata.locationAsCoordinates.coordinates.lon;
-  this.latt=this.customerdata.locationAsCoordinates.coordinates.lat;
-  this.orderStatus=this.pharmacyCurrentOrderData.globalStatus;
-  this.orderPhoto=this.pharmacyCurrentOrderData.orderByPhoto;
-  this.orderText=this.pharmacyCurrentOrderData.orderByTexting;
-  this.map();
+    this.api(_PharmacyCurrentOrdersService);
 }
-else
-if(data.message=="no order founds")
-{this.pharmacyCurrentOrderData = null;
-  this.customerdata=null;} 
-
-console.log(this.pharmacyCurrentOrderData);
-console.log(this.customerdata);
 
 
-},
-err => {
-  console.log(err);
-} )
 
+   api(_PharmacyCurrentOrdersService:PharmacyCurrentOrdersService) { setTimeout(() => {
+    console.log("ay haga");
+    _PharmacyCurrentOrdersService.pharmacyCurrentOrder().subscribe( (data)=>{
+      if(data.message=='success')        
+      {  this.pharmacyCurrentOrderData = data.pharmacyOrders[0].orderdata;
+        this.customerdata=data.pharmacyOrders[0].customersData;
+        this.orderDate=this.pharmacyCurrentOrderData.date.substring(0,10);
+        this.orderTime=this.pharmacyCurrentOrderData.date.substring(11,19);
+        this.customerName=this.customerdata.name;
+        this.customerphoto=this.customerdata.photo;
+        this.customerphone=this.customerdata.phone;
+        this.customerAddress=this.customerdata.locationAsAddress
+        this.lng=this.customerdata.locationAsCoordinates.coordinates.lon;
+        this.latt=this.customerdata.locationAsCoordinates.coordinates.lat;
+        this.orderStatus=this.pharmacyCurrentOrderData.globalStatus;
+        this.orderPhoto=this.pharmacyCurrentOrderData.orderByPhoto;
+        this.orderText=this.pharmacyCurrentOrderData.orderByTexting;
+        this.map();
+        //this.api(_PharmacyCurrentOrdersService);
+      }
+      else
+      if(data.message=="no order founds")
+      {this.pharmacyCurrentOrderData = null;
+        this.customerdata=null;} 
+      
+      console.log(this.pharmacyCurrentOrderData);
+      console.log(this.customerdata);
+      
+      
+      },
+    err => {
+      console.log(err);
+    } )
+    }, 3000);
+  
+     }
+
+
+
+   done()
+   {
+     this._PharmacyCurrentOrdersService.doneOrder(this.pharmacyCurrentOrderData._id).subscribe(d => {
+       
+      console.log(d)
+      console.log('done')
+       window.location.reload();
+     },
+       err => {
+         console.log(err);
+       })
+ 
    }
+ 
+
 
    map() {
     console.log(this.lng,this.latt)

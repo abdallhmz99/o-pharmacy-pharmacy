@@ -23,4 +23,10 @@ export class PharmacyCurrentOrdersService {
   {
     return this._HttpClient.get(this.baseUrl+"pharmacyCurrentOrders",this.httpOptions)
 }
+
+doneOrder(orderId:any):Observable<any>
+{
+  return this._HttpClient.post(this.baseUrl+"doneorder",{orderId},this.httpOptions)
+}
+
   }
