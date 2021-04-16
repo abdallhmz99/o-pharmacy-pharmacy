@@ -50,4 +50,9 @@ export class EditProfileService {
   {
     return this._HttpClient.post(this.baseUrl + "editPharmacyCoordinates",{ lat , lon},this.httpOptions);
   }
+  editPharmacyLogo(photo:any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "editPharmacyLogo",{photo},this.httpOptions);
+
+  }
 }

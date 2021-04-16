@@ -1,0 +1,76 @@
+// @import '../../styles.scss';
+
+$main-bgcolor :rgba(217,217,219,.7);// ;
+$second-bgcolor:rgba(255, 255, 255,.7);//rgb(217,217,219);
+$text-color : black ;
+$btn-bgcolor:#00bfff;
+
+.mainDiv
+{
+   background-color:white ;
+   background-size: cover;
+   background-position: center;
+    
+}
+
+// img 
+// {
+//     box-shadow: 0px 0px 15px rgba(255, 255,255,.6);
+//     width: 100% ;
+//     height: 100% ;
+// }
+.mainCard
+{   padding: 3rem;
+    color: $text-color;
+    background-color:$main-bgcolor;
+
+}
+
+.oneEdit
+{   padding: 1.5rem;
+    background-color:$second-bgcolor;
+    border-radius: 3%;
+}
+
+// .btn
+// {   color: $text-color;
+//     background-color: $btn-bgcolor ;
+// }
+
+.map
+{
+    width: 15rem; 
+    height: 15rem;
+}
+.imgContainer
+{
+    position: relative;
+
+}
+.uploadBtn{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.imgContainer:hover .image {
+    opacity: 0.3;
+  }
+  
+  .imgContainer:hover .uploadBtn {
+    opacity: 1;
+  }
+.fa-edit{
+    opacity: 0;
+}
+.icon:hover  .fa-edit{
+    opacity: 1;
+}
+.mapInfo{
+    height: 15rem;
+
+}
