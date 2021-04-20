@@ -54,7 +54,8 @@ export class PharmacyCurrentOrdersComponent implements OnInit {
       else
       if(data.message=="no order founds")
       {this.pharmacyCurrentOrderData = null;
-        this.customerdata=null;} 
+        this.customerdata=null;
+      console.log(data.message)} 
       
       console.log(this.pharmacyCurrentOrderData);
       console.log(this.customerdata);

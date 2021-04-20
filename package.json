@@ -27,6 +27,7 @@
     "mapbox-gl": "^2.0.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
+    "skitter-slider": "^5.1.4",
     "tslib": "^2.0.0",
     "typed.js": "^2.0.12",
     "zone.js": "~0.10.2"

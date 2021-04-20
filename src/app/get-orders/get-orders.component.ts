@@ -24,8 +24,8 @@ customerPhoto:any;
         (data)=>{
           if(data){
             console.log(data)
-
-            this.orders=data.order;
+            if(data.message!='no orders found'){
+                   this.orders=data.order;
             this.orderID=this.orders._id;
             this.orderDate=this.orders.date.substring(0,10);
             this.orderTime=this.orders.date.substring(11,19);
@@ -33,6 +33,9 @@ customerPhoto:any;
             this.orderByimg=this.orders.orderByPhoto;
             this.customerData=data.customerData;
             this.customerPhoto=this.customerData.photo;
+            }
+            
+       
           } 
          },
         (error)=>{
