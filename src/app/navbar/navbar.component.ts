@@ -49,7 +49,7 @@ email:any;
 
   logout(){
     localStorage.removeItem('token');
-    localStorage.removeItem('phtot');
+    localStorage.removeItem('logo');
     window.location.reload();
   
   }
